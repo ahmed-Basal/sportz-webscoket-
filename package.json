@@ -2,22 +2,43 @@
   "name": "chatapp",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/server.js",
-    "start": "node src/server.js"
+    "dev": "tsx watch src/index.ts",
+    "client:dev": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build",
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "demo": "tsx src/crud-demo.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@arcjet/node": "^1.14.1",
+    "@neondatabase/serverless": "^1.2.0",
+    "@scalar/express-api-reference": "^0.10.30",
     "cors": "^2.8.6",
     "dotenv": "^18.0.8",
-    "express": "^5.3.0"
+    "drizzle-orm": "^0.45.4",
+    "drizzle-zod": "^0.8.3",
+    "express": "^5.3.0",
+    "ws": "^8.22.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/ws": "^8.18.2",
+    "drizzle-kit": "^0.31.11",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }
- 

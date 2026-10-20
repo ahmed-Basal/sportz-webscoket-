@@ -1,4 +1,11 @@
 node_modules/
+client/node_modules/
+client/dist/
+dist/
 .env
+.env.local
 npm-debug.log*
 .DS_Store
+.agents/
+skills-lock.json
+
